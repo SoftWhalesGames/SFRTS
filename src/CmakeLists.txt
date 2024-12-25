@@ -1,0 +1,5 @@
+add_subdirectory(game_app)
+
+file(GLOB main_src main.cpp)
+
+target_sources(${PROJECT_NAME} PRIVATE ${main_src})

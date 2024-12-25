@@ -11,6 +11,8 @@ FetchContent_Declare(SFML
     EXCLUDE_FROM_ALL
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
- 
-add_executable(main src/main.cpp)
-target_link_libraries(main PRIVATE sfml-graphics)
+
+add_executable(${PROJECT_NAME})
+
+add_subdirectory(src)
+target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics)
