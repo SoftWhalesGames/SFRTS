@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
-#include "game_app/game_app.h"
+#include "GameApp/GameApp.h"
 
 int main()
 {
     auto window = sf::RenderWindow(sf::VideoMode({800u, 600u}), "CMake SFML Project");
-    game_app* app = new game_app(&window);
+    GameApp* app = new GameApp(&window);
 
     app->run();
     

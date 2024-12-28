@@ -6,13 +6,13 @@
 #ifndef GAME_APP_H
 #define GAME_APP_H
 
-class game_app // TODO UPDATE STRUCTURE DECLARATION
+class GameApp // TODO UPDATE STRUCTURE DECLARATION
 {
 public:
-    game_app();
-    game_app(sf::RenderWindow* window);
+    GameApp();
+    GameApp(sf::RenderWindow* window);
 
-    void handle_input();
+    void handleInput();
     void draw();
     void update();
     void run();

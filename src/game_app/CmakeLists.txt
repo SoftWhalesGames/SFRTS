@@ -1,4 +1,0 @@
-
-file(GLOB game_app_src game_app.cpp)
-
-target_sources(${PROJECT_NAME} PRIVATE ${game_app_src})

@@ -1,14 +1,14 @@
 
-#include "game_app.h"
+#include "GameApp.h"
 
-game_app::game_app() {}
+GameApp::GameApp() {}
 
-game_app::game_app(sf::RenderWindow* window) // TODO UPDATE IMPLEMENTATION
+GameApp::GameApp(sf::RenderWindow* window) // TODO UPDATE IMPLEMENTATION
 {
     m_window = window;
 }
 
-void game_app::handle_input()
+void GameApp::handleInput()
 {
     sf::Event _event;
     while (m_window->pollEvent(_event))
@@ -23,7 +23,7 @@ void game_app::handle_input()
     }
 }
 
-void game_app::draw()
+void GameApp::draw()
 {
     m_window->clear();
     /*
@@ -32,18 +32,18 @@ void game_app::draw()
     m_window->display();
 }
 
-void game_app::update()
+void GameApp::update()
 {
     /*
      * update implementation with Box2D))
      */
 }
 
-void game_app::run()
+void GameApp::run()
 {
     while (m_window->isOpen())
     {
-        handle_input();
+        handleInput();
         update();
         draw();
     }

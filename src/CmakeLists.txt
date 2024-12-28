@@ -1,4 +1,4 @@
-add_subdirectory(game_app)
+add_subdirectory(GameApp)
 
 file(GLOB main_src main.cpp)
 
