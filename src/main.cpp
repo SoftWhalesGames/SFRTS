@@ -1,26 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include "GameApp/GameApp.h"
 
 int main()
 {
     auto window = sf::RenderWindow(sf::VideoMode({800u, 600u}), "CMake SFML Project");
-    // window.setFramerateLimit(144);
-    /*
-     * add unit test
-     * add other sfml libs
-     */
+    GameApp* app = new GameApp(&window);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-            {
-                window.close();
-            }
-        }
-
-        window.clear();
-        window.display();
-    }
+    app->run();
+    
+    return EXIT_SUCCESS;
 }
