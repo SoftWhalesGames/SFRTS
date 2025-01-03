@@ -4,7 +4,7 @@ project(SFRTS LANGUAGES CXX)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 
-include_directories(include)
+include_directories(src)
 add_subdirectory(src)
 
 # add_executable(${PROJECT_NAME})
