@@ -4,6 +4,10 @@
 #ifndef GAME_APP_H
 #define GAME_APP_H
 
+#define GAME_APP_RESOUCE_IMAGE "assets/images"
+
+#define GAME_APP_GET_TEXTURE_PATH(texture_path) GAME_APP_RESOUCE_IMAGE "/" texture_path
+
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <Animator/Animator.hpp>

@@ -3,11 +3,7 @@ project(SFRTS LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-
 include_directories(src)
 add_subdirectory(src)
 
-# add_executable(${PROJECT_NAME})
-
-
-# target_link_libraries(${PROJECT_NAME} PRIVATE sfml-graphics)
+file(COPY assets DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
