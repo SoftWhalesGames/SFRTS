@@ -19,14 +19,15 @@ public:
     void update(float delta);
     void setAnimation(sf::String animation_name);
     void addAnimation(sf::String name, Animation animation);
-    void setPositionCallback(sf::Vector2f (*get_position)(void));
+    void setPosition(sf::Vector2f position);
 
 private:
     std::map<sf::String,Animation> m_offset_by_animation_name;
     sf::Texture* m_animation_set;
     sf::String m_previous_animation;
     sf::String m_current_animation;
-    sf::Vector2f (*m_get_position)(void);
+    // sf::Vector2f (*m_get_position)(void);
+    sf::Vector2f m_animation_position;
 };
 
 #endif // ANIMATOR_HPP

@@ -18,8 +18,7 @@ void Animator::draw(sf::RenderTarget *target)
 {
     Animation* animation = &m_offset_by_animation_name.at(m_current_animation);
     sf::Sprite current_frame = animation->getCurrentFrame(m_animation_set);
-    sf::Vector2f position = m_get_position();
-    current_frame.setPosition(position);
+    current_frame.setPosition(m_animation_position);
     target->draw(current_frame);
 }
 
@@ -43,7 +42,7 @@ void Animator::addAnimation(const sf::String name, Animation animation)
     m_offset_by_animation_name.insert(pair);
 }
 
-void Animator::setPositionCallback(sf::Vector2f (*get_position)(void))
+void Animator::setPosition(sf::Vector2f position)
 {
-    m_get_position = get_position;
+    m_animation_position = position;
 }

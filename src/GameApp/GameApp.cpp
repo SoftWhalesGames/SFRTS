@@ -11,11 +11,7 @@ GameApp::GameApp(sf::RenderWindow* window) // TODO UPDATE IMPLEMENTATION
         printf("ERROR");
     }
     m_animations = Animator(&m_animations_texture);
-    m_animations.setPositionCallback(
-        []()
-        {
-            return sf::Vector2f{40.f,40.f};
-        });
+    m_animations.setPosition(sf::Vector2f{40.f,40.f});
 
     Animation anim1 = Animation({0,0}, {32,24}, 200, 8);
     m_animations.addAnimation("anim1",anim1);
