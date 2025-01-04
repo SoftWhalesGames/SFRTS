@@ -11,9 +11,9 @@ public:
     Animation(  sf::Vector2i base_offset, sf::Vector2i frame_size,
                 uint16_t frame_timeout,uint8_t frame_count);
 
-    sf::Sprite GetCurrentFrame(sf::Texture* animations);
-    void ResetAnimation();
-    void Update(float delta);
+    sf::Sprite getCurrentFrame(sf::Texture* animations);
+    void resetAnimation();
+    void update(float delta);
 
 private:
     sf::Vector2i m_base_offset;

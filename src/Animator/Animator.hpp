@@ -15,11 +15,11 @@ public:
     Animator(sf::Texture* animation_texture);
     ~Animator();
 
-    void Draw(sf::RenderTarget* target);
-    void Update(float delta);
-    void SetAnimation(sf::String animation_name);
-    void AddAnimation(sf::String name, Animation animation);
-    void SetPositionCallback(sf::Vector2f (*get_position)(void));
+    void draw(sf::RenderTarget* target);
+    void update(float delta);
+    void setAnimation(sf::String animation_name);
+    void addAnimation(sf::String name, Animation animation);
+    void setPositionCallback(sf::Vector2f (*get_position)(void));
 
 private:
     std::map<sf::String,Animation> m_offset_by_animation_name;

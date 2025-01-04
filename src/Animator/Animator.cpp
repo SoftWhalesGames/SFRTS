@@ -14,36 +14,36 @@ Animator::~Animator()
 {
 }
 
-void Animator::Draw(sf::RenderTarget *target)
+void Animator::draw(sf::RenderTarget *target)
 {
     Animation* animation = &m_offset_by_animation_name.at(m_current_animation);
-    sf::Sprite current_frame = animation->GetCurrentFrame(m_animation_set);
+    sf::Sprite current_frame = animation->getCurrentFrame(m_animation_set);
     sf::Vector2f position = m_get_position();
     current_frame.setPosition(position);
     target->draw(current_frame);
 }
 
-void Animator::Update(float delta)
+void Animator::update(float delta)
 {
     Animation* animation = &m_offset_by_animation_name.at(m_current_animation);
-    animation->Update(delta);
+    animation->update(delta);
 }
 
-void Animator::SetAnimation(sf::String animation_name)
+void Animator::setAnimation(sf::String animation_name)
 {
     m_previous_animation = m_current_animation;
     m_current_animation = animation_name;
     Animation* animation = &m_offset_by_animation_name.at(m_current_animation);
-    animation->ResetAnimation();
+    animation->resetAnimation();
 }
 
-void Animator::AddAnimation(const sf::String name, Animation animation)
+void Animator::addAnimation(const sf::String name, Animation animation)
 {
     std::pair<sf::String,Animation> pair = std::pair<sf::String,Animation>(name,animation);
     m_offset_by_animation_name.insert(pair);
 }
 
-void Animator::SetPositionCallback(sf::Vector2f (*get_position)(void))
+void Animator::setPositionCallback(sf::Vector2f (*get_position)(void))
 {
     m_get_position = get_position;
 }

@@ -11,28 +11,28 @@ GameApp::GameApp(sf::RenderWindow* window) // TODO UPDATE IMPLEMENTATION
         printf("ERROR");
     }
     m_animations = Animator(&m_animations_texture);
-    m_animations.SetPositionCallback(
+    m_animations.setPositionCallback(
         []()
         {
             return sf::Vector2f{40.f,40.f};
         });
 
     Animation anim1 = Animation({0,0}, {32,24}, 200, 8);
-    m_animations.AddAnimation("anim1",anim1);
+    m_animations.addAnimation("anim1",anim1);
 
     Animation anim2 = Animation({0,35},{20,35}, 500,4);
-    m_animations.AddAnimation("anim2",anim2);
+    m_animations.addAnimation("anim2",anim2);
 
-    m_animations.SetAnimation("anim1");
+    m_animations.setAnimation("anim1");
 
 }
 
 void GameApp::handleInput()
 {
-    sf::Event _event;
-    while (m_window->pollEvent(_event))
+    sf::Event ev;
+    while (m_window->pollEvent(ev))
     {
-        if (_event.type == sf::Event::Closed)
+        if (ev.type == sf::Event::Closed)
         {
             m_window->close();
         }
@@ -46,7 +46,7 @@ void GameApp::draw()
 {
     m_window->clear();
     
-    m_animations.Draw(m_window);
+    m_animations.draw(m_window);
 
     m_window->display();
 }
@@ -54,7 +54,7 @@ void GameApp::draw()
 void GameApp::update()
 {
     float delta = m_clock.restart().asSeconds();
-    m_animations.Update(delta);
+    m_animations.update(delta);
 }
 
 void GameApp::run()

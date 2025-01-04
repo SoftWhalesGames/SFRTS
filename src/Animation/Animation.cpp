@@ -16,7 +16,7 @@ Animation::Animation(sf::Vector2i base_offset, sf::Vector2i frame_size,
     m_current_frame = 0;
 }
 
-sf::Sprite Animation::GetCurrentFrame(sf::Texture *animations)
+sf::Sprite Animation::getCurrentFrame(sf::Texture *animations)
 {
     sf::Sprite frame;
     frame.setTexture(*animations);
@@ -24,13 +24,13 @@ sf::Sprite Animation::GetCurrentFrame(sf::Texture *animations)
     return frame;
 }
 
-void Animation::ResetAnimation()
+void Animation::resetAnimation()
 {
     m_frame_timeout = 0;
     m_current_frame = 0;
 }
 
-void Animation::Update(float delta)
+void Animation::update(float delta)
 {
     m_frame_timeout = m_frame_timeout + (uint16_t)(delta * 1000);
 
