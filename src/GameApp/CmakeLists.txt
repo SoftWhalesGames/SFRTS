@@ -1,4 +1,10 @@
 
-file(GLOB GameApp_src GameApp.cpp)
+add_library(GameApp GameApp.cpp)
 
-target_sources(${PROJECT_NAME} PRIVATE ${GameApp_src})
+target_link_libraries(
+    GameApp
+  PRIVATE
+    sfml-graphics
+    Animation
+    Animator
+)
