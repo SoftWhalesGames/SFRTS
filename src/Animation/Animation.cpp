@@ -21,6 +21,8 @@ sf::Sprite Animation::getCurrentFrame(sf::Texture *animations)
     sf::Sprite frame;
     frame.setTexture(*animations);
     frame.setTextureRect(m_frame);
+    sf::Vector2f origin =  sf::Vector2f( m_frame.getSize()) / 2.f;
+    frame.setOrigin(origin);
     return frame;
 }
 

@@ -1,0 +1,10 @@
+
+add_library(Units Unit.cpp)
+
+target_link_libraries(
+    Units
+    PRIVATE
+    sfml-graphics
+    Animation
+    Animator
+)

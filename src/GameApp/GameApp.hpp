@@ -11,6 +11,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <Animator/Animator.hpp>
+#include <Units/Unit.hpp>
 
 class GameApp // TODO UPDATE STRUCTURE DECLARATION
 {
@@ -27,6 +28,7 @@ private:
     sf::RenderWindow* m_window;
     sf::Clock m_clock;
     sf::Texture m_animations_texture;
+    Unit m_unit;
     Animator m_animations;
 };
 

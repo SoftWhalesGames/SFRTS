@@ -32,6 +32,7 @@ void GameApp::handleInput()
         {
             m_window->close();
         }
+        m_unit.handleInput(ev);
         /*
          * input handling implementation
          */
