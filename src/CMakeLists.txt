@@ -11,6 +11,14 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
+# Add ImGui (Docking Branch)
+FetchContent_Declare(ImGui
+    GIT_REPOSITORY https://github.com/ocornut/imgui.git
+    GIT_TAG docking
+    GIT_SHALLOW ON
+)
+FetchContent_MakeAvailable(ImGui)
+
 
 add_subdirectory(Animation)
 add_subdirectory(Animator)
@@ -22,4 +30,5 @@ target_link_libraries(${PROJECT_NAME}
     Animator
     GameApp
     sfml-graphics
+    
 )
