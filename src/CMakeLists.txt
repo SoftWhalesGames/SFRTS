@@ -1,5 +1,4 @@
 
-# Головна програма
 add_executable(${PROJECT_NAME} main.cpp)
 
 include(FetchContent)
@@ -11,10 +10,17 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
 
 add_subdirectory(Animation)
 add_subdirectory(Animator)
 add_subdirectory(GameApp)
+add_subdirectory(ResourceManager)
+
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
@@ -22,4 +28,8 @@ target_link_libraries(${PROJECT_NAME}
     Animator
     GameApp
     sfml-graphics
+<<<<<<< Updated upstream
+=======
+    ResourceManager
+>>>>>>> Stashed changes
 )

@@ -7,4 +7,5 @@ target_link_libraries(
     sfml-graphics
     Animation
     Animator
+    ResourceManager
 )
