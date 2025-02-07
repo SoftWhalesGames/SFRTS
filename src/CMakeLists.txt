@@ -2,22 +2,41 @@
 # Головна програма
 add_executable(${PROJECT_NAME} main.cpp)
 
+
+
+set(SFML_VERSION 2.5.1)
+set(IMGUI_VERSION 1.87)
 include(FetchContent)
-FetchContent_Declare(SFML
+
+FetchContent_Declare(sfml
     GIT_REPOSITORY https://github.com/SFML/SFML.git
     GIT_TAG 2.6.0
-    GIT_SHALLOW ON
-    EXCLUDE_FROM_ALL
-    SYSTEM)
-FetchContent_MakeAvailable(SFML)
-
-# Add ImGui (Docking Branch)
-FetchContent_Declare(ImGui
-    GIT_REPOSITORY https://github.com/ocornut/imgui.git
-    GIT_TAG docking
-    GIT_SHALLOW ON
+   )
+FetchContent_Declare(
+  imgui
+  GIT_REPOSITORY https://github.com/ocornut/imgui.git
+  GIT_TAG        v1.89
 )
-FetchContent_MakeAvailable(ImGui)
+
+FetchContent_Declare(
+  imgui-sfml
+  GIT_REPOSITORY https://github.com/SFML/imgui-sfml.git
+  GIT_TAG        2.6.x
+
+)
+
+
+option(SFML_BUILD_AUDIO "Build audio" OFF)
+option(SFML_BUILD_NETWORK "Build network" OFF)
+FetchContent_MakeAvailable(sfml)
+
+FetchContent_MakeAvailable(imgui)
+
+set(IMGUI_DIR ${imgui_SOURCE_DIR})
+option(IMGUI_SFML_FIND_SFML "Use find_package to find SFML" OFF)
+option(IMGUI_SFML_IMGUI_DEMO "Build imgui_demo.cpp" ON)
+
+FetchContent_MakeAvailable(imgui-sfml)
 
 
 add_subdirectory(Animation)
@@ -29,6 +48,6 @@ target_link_libraries(${PROJECT_NAME}
     Animation
     Animator
     GameApp
-    sfml-graphics
-    
+    ImGui-SFML::ImGui-SFML
+   
 )
